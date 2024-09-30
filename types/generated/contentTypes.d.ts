@@ -788,6 +788,109 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiNotificationNotification extends Schema.CollectionType {
+  collectionName: 'notifications';
+  info: {
+    singularName: 'notification';
+    pluralName: 'notifications';
+    displayName: 'Notification';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Content: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::notification.notification',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::notification.notification',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTrainingTraining extends Schema.CollectionType {
+  collectionName: 'trainings';
+  info: {
+    singularName: 'training';
+    pluralName: 'trainings';
+    displayName: 'Training';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.Required;
+    Content: Attribute.Text & Attribute.Required;
+    Category: Attribute.Enumeration<
+      [
+        'Incident Identification',
+        'Containment Strategies',
+        'Eradication Techniques',
+        'Recovery Procedures',
+        'Communication and Coordination',
+        'Best Practices'
+      ]
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::training.training',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::training.training',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiVideosCaseStudyVideosCaseStudy
+  extends Schema.CollectionType {
+  collectionName: 'videos_case_studies';
+  info: {
+    singularName: 'videos-case-study';
+    pluralName: 'videos-case-studies';
+    displayName: 'VideosCaseStudy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Link: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::videos-case-study.videos-case-study',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::videos-case-study.videos-case-study',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -806,6 +909,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::notification.notification': ApiNotificationNotification;
+      'api::training.training': ApiTrainingTraining;
+      'api::videos-case-study.videos-case-study': ApiVideosCaseStudyVideosCaseStudy;
     }
   }
 }

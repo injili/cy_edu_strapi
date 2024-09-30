@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "videos_case_studies",
+  "info": {
+    "singularName": "videos-case-study",
+    "pluralName": "videos-case-studies",
+    "displayName": "VideosCaseStudy"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Link": {
+      "type": "text"
+    }
+  }
+}
