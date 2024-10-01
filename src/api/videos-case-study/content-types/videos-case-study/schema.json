@@ -4,7 +4,8 @@
   "info": {
     "singularName": "videos-case-study",
     "pluralName": "videos-case-studies",
-    "displayName": "VideosCaseStudy"
+    "displayName": "VideosCaseStudy",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,9 @@
   "attributes": {
     "Link": {
       "type": "text"
+    },
+    "Title": {
+      "type": "string"
     }
   }
 }

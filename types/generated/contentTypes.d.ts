@@ -794,12 +794,14 @@ export interface ApiNotificationNotification extends Schema.CollectionType {
     singularName: 'notification';
     pluralName: 'notifications';
     displayName: 'Notification';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     Content: Attribute.Text;
+    Title: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -867,12 +869,14 @@ export interface ApiVideosCaseStudyVideosCaseStudy
     singularName: 'videos-case-study';
     pluralName: 'videos-case-studies';
     displayName: 'VideosCaseStudy';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     Link: Attribute.Text;
+    Title: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
